@@ -1,0 +1,172 @@
+.hero {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding-top: 6rem;
+  overflow: hidden;
+  .illustration {
+    margin: 0 auto;
+    width: 100%;
+    animation: bounce 1s infinite alternate;
+    overflow-y: visible;
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 800px;
+      width: 150%;
+      object-fit: contain;
+    }
+  }
+  .hero-text {
+    margin-top: 2rem;
+    .hero-heading {
+      text-align: center;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: $very-dark-blue;
+    }
+    .hero-desc {
+      color: $grayish-violet;
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 18px;
+    }
+    .hero-btn {
+      margin: 2rem auto;
+      display: block;
+      outline: none;
+      background: $cyan;
+      color: white;
+      font-weight: 700;
+      border: none;
+      font-size: 1.25rem;
+      padding: 1rem 3rem;
+      border-radius: 30px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 0;
+    overflow: visible;
+    .illustration {
+      margin-right: -20rem;
+      img {
+        width: 100%;
+        max-width: 800px;
+      }
+    }
+    .hero-text {
+      .hero-heading {
+        text-align: left;
+        font-size: 4rem;
+        max-width: 700px;
+        min-width: 600px;
+        animation: shake-it-off 250ms 5 forwards;
+      }
+      .hero-desc {
+        text-align: left;
+        max-width: 500px;
+        font-size: 1.25rem;
+        opacity: 0;
+        transform: translateY(-50%);
+        animation: reveal 1s forwards;
+        animation-delay: 1.25s;
+      }
+      .hero-btn {
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(-50%);
+        margin-left: 0;
+        animation: slide-to-frame 1s forwards;
+        animation-delay: 1.5s;
+        &:hover {
+          opacity: 0.7 !important;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero {
+    .hero-text {
+      .hero-heading {
+        text-align: left;
+        font-size: 5rem;
+        max-width: 700px;
+        min-width: 600px;
+      }
+      .hero-desc {
+        text-align: left;
+        max-width: 600px;
+        font-size: 1.5rem;
+      }
+      .hero-btn {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(-1%);
+  }
+  to {
+    transform: translateY(1%);
+  }
+}
+@keyframes shake-it-off {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide-to-frame {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+}

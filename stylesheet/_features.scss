@@ -1,0 +1,121 @@
+.features {
+  background: #f0f1f6;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  .features-text {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.3rem;
+    .features-header {
+      text-align: center;
+      font-size: 1.8rem;
+    }
+    .features-desc {
+      margin: 0 auto;
+      margin-top: 1.5rem;
+      text-align: center;
+      color: $grayish-violet;
+      font-size: 1rem;
+      max-width: 550px;
+    }
+  }
+  .features-illustration {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.3rem;
+    position: relative;
+    z-index: 10;
+    .features-card {
+      padding: 0 1rem;
+      padding-bottom: 2rem;
+      margin: 0 auto;
+      margin-top: 6rem;
+      background: white;
+      border-radius: 5px;
+      max-width: 380px;
+      position: relative;
+      z-index: 10;
+
+      .card-icon {
+        display: block;
+        margin: 0 auto;
+        padding: 1rem;
+        background: $dark-violet;
+        border-radius: 50%;
+        transform: translateY(-50%);
+      }
+      .card-header {
+        text-align: center;
+        font-size: 1.8rem;
+      }
+      .card-desc {
+        margin-top: 1rem;
+        text-align: center;
+        color: $grayish-violet;
+        font-size: 18px;
+      }
+    }
+  }
+  .bar {
+    width: 8px;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    background: $cyan;
+    z-index: 1;
+    transition: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .features {
+    .features-text {
+      .features-header {
+        font-size: 2.5rem;
+      }
+      .features-desc {
+        font-size: 18px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1280px) {
+  .features {
+    .features-illustration {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 !important;
+      .features-card {
+        padding: 0 2rem !important;
+        padding-bottom: 2rem !important;
+        &:nth-child(2) {
+          margin-top: 8rem;
+        }
+        &:nth-child(3) {
+          margin-top: 11rem;
+        }
+        .card-icon {
+          margin-left: 0;
+        }
+        .card-header {
+          text-align: left;
+        }
+        .card-desc {
+          text-align: left;
+        }
+      }
+    }
+    .bar {
+      height: 8px !important;
+      width: 80% !important;
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+    }
+  }
+}
