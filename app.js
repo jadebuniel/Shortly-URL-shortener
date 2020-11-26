@@ -127,10 +127,6 @@ const loadingLinks =  async(links) =>{
    })
 }
 
-
-
-         
-
 document.addEventListener('DOMContentLoaded', () => {
    if (localStorage.getItem(`links`) === null){
       links = []
